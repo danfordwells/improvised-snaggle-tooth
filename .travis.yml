@@ -1,22 +1,23 @@
----
 language: node_js
 node_js:
-  - "4"
-
+- '4'
 sudo: false
-
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 before_install:
-  - npm config set spin false
-  - npm install -g bower
-  - npm install phantomjs-prebuilt
-
+- npm config set spin false
+- npm install -g bower
+- npm install phantomjs-prebuilt
 install:
-  - npm install
-  - bower install
-
+- npm install
+- bower install
 script:
-  - npm test
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: Pz8AuT5ByGC+VAYWndevK5vx8Tseq5y2cAgZsp45ER1Nx+0hQG2le8J+XHqOzMQSaC44c71ruORFoU6kzCGUemEfV3VvjSay8hqXEnU0qbPKpqqaXM8aA2tlCCcGTehV6NCfzU1DETyZlemBy6qrE6wUIJoXCuQ7DHOv+M6ZwrRwurmMyLQarM7MfDV3b+HPzuI+VEJu7FUKtCIO1mWXGQMJWGHCPg5RwcGe9knS7bfLZq/zEMmSLhjl9sMnA6eSodD5Vz+kIXSXn2PjXN8znaMosFjDj68GWkafCdUCC1Rlq3/8ZKaudy15iqgcTp3sVGuUpwbMJnXXrePMPqk6J0soeeqLmQAIBEtaCIS3AsOg2QUQTNLvB9gxbOciGiq6WHCouiYq3jGN4BPYsVyLgkgVXXVoOHTvFuq4Yl58pyejaC4auXFyi72cmz5vbO70yrquzNkk1+rPIR4OQx1I/iTGzaTahgYx84GWlbBtb88CPEVY6GHUNoZlTPCbNiPePtf6DDSOuosAy4sjWBFpQaHmYLkvrbUm3ILUstcYlqMV4a7qtNxXpjVw/b/r6uwvlb44/70+UiD+MQCp+dWGr2Xsxby67e4FpDCDEecC0EW8WEfieHRXv5yoEH1dhY9dTSfXu/wA/2bXy3gF2dTQqtDoi2iT4IJDPQFsXhkFTWU=
+  app: tranquil-cliffs-52097
+  on:
+    repo: danfordwells/improvised-snaggle-tooth
